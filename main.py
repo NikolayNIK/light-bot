@@ -38,7 +38,7 @@ def printField(field, playerX, playerY, playerO):
 		tmp = '#';
 		for x in range(0, len(row)):
 			if x == playerX and y == playerY:
-				tmp += ORIENTATION_CHARS[playerO - 1];
+				tmp += ORIENTATION_CHARS[playerO];
 			else:
 				tmp += row[x];
 		tmp += '#';
@@ -66,7 +66,7 @@ try:
 				char = row[x];
 				shit = ORIENTATION_INTS.get(char);
 				if shit:
-					playerO = shit;
+					playerO = shit - 1;
 					playerX = x;
 					playerY = y;
 					row[x] = ' ';
@@ -83,14 +83,14 @@ try:
 		for command in list(commands):
 			time.sleep(1);
 			if command == '1':
-				playerX += ORIENTATION_OFFSET_X[playerO - 1];
-				playerY += ORIENTATION_OFFSET_Y[playerO - 1];
+				playerX += ORIENTATION_OFFSET_X[playerO];
+				playerY += ORIENTATION_OFFSET_Y[playerO];
 				if (playerX < 0) or (playerY < 0) or (playerY >= len(field)) or (playerX >= len(field[playerY]) or field[playerY][playerX] == '#'):
 					victory = False;
 					break;
 			elif command == '2':
-				playerX += 2 * ORIENTATION_OFFSET_X[playerO - 1];
-				playerY += 2 * ORIENTATION_OFFSET_Y[playerO - 1];
+				playerX += 2 * ORIENTATION_OFFSET_X[playerO];
+				playerY += 2 * ORIENTATION_OFFSET_Y[playerO];
 				if (playerX < 0) or (playerY < 0) or (playerY >= len(field)) or (playerX >= len(field[playerY]) or field[playerY][playerX] == '#'):
 					victory = False;
 					break;
@@ -102,12 +102,12 @@ try:
 					break;
 			elif command == 'L' or command == 'l' or command == 'д' or command == 'Д':
 				playerO -= 1;
-				if playerO < 1:
-					playerO = 4;
+				if playerO < 0:
+					playerO = 3;
 			elif command == 'R' or command == 'r' or command == 'к' or command == 'К':
 				playerO += 1;
-				if playerO > 4:
-					playerO = 1;
+				if playerO > 3:
+					playerO = 0;
 			else:
 				victory = False;
 				print("Wrong command: " + command);
