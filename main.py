@@ -90,17 +90,17 @@ try:
 				if (playerX < 0) or (playerY < 0) or (playerY >= len(field)) or (playerX >= len(field[playerY]) or field[playerY][playerX] == '#'):
 					victory = False;
 					break;
-			elif command == 'C' or command == 'c':
+			elif command == 'C' or command == 'c' or command == 'с' or command == 'С':
 				if field[playerY][playerX] == 'O':
 					field[playerY][playerX] = '0';
 				else:
 					victory = False;
 					break;
-			elif command == 'L' or command == 'l':
+			elif command == 'L' or command == 'l' or command == 'д' or command == 'Д':
 				playerO -= 1;
 				if playerO < 1:
 					playerO = 4;
-			elif command == 'R' or command == 'r':
+			elif command == 'R' or command == 'r' or command == 'к' or command == 'К':
 				playerO += 1;
 				if playerO > 4:
 					playerO = 1;
