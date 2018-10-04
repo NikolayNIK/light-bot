@@ -14,9 +14,9 @@ O - dark cell (turn all into light to win).
 ''')
 
 HELP = '''1 - move one cell fowrard.
-2 - move two cell forward.
-L - turn left (counter-clockwise)
-R - turn right (clockwise)
+2 - move two cells forward.
+L - turn left (counter-clockwise).
+R - turn right (clockwise).
 C - light the cell.
 ''';
 
