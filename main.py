@@ -125,3 +125,4 @@ while True:
 	except FileNotFoundError:
 		print("No levels left! Congratulations!");
 		input("Press enter to continue...");
+		break;
