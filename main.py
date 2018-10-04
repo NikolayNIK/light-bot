@@ -1,7 +1,11 @@
-from subprocess import call;
+import os;
 import time;
 
-call(["clear"]);
+def clear():
+	os.system("clear");
+	os.system("cls");
+
+clear();
 print('''=====light bot=====
 <^>v - player.
 # - void cell.
@@ -30,7 +34,7 @@ ORIENTATION_OFFSET_Y = [0, -1, 0, 1];
 level = int(input('Enter a level: '));
 
 def printField(field, playerX, playerY, playerO):
-	call(["clear"]);
+	clear();
 	print((len(field[0]) + 2) * "#");
 	for y in range(0, len(field)):
 		row = field[y];
