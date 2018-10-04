@@ -26,11 +26,6 @@ ORIENTATION_INTS = {'<':1, '^':2, '>':3, 'v':4};
 ORIENTATION_OFFSET_X = [-1, 0, 1, 0];
 ORIENTATION_OFFSET_Y = [0, -1, 0, 1];
 
-#field
-#playerX
-#playerY
-#playerO
-
 level = int(input('Enter a level: '));
 
 def printField(field, playerX, playerY, playerO):
