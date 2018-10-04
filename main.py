@@ -44,8 +44,8 @@ def printField(field, playerX, playerY, playerO):
 		print(tmp);
 	print((len(field[0]) + 2) * "#");
 
-while True:
-	try:
+try:
+	while True:
 		# Read level from file.
 		file = open(str(level) + ".txt", "r");
 		field = file.readlines();
@@ -122,7 +122,6 @@ while True:
 			level+=1;
 		else:
 			input("You lost! Press enter to retry...");
-	except FileNotFoundError:
-		print("No levels left! Congratulations!");
-		input("Press enter to continue...");
-		break;
+except FileNotFoundError:
+	print("No levels left! Congratulations!");
+	input("Press enter to continue...");
