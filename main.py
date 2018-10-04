@@ -42,7 +42,7 @@ def printField(field, playerX, playerY, playerO):
 				tmp += row[x];
 		tmp += '#';
 		print(tmp);
-	print((len(field[0]) + 2) * "#");
+	print((len(field[len(field) - 1]) + 2) * "#");
 
 try:
 	while True:
