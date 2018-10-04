@@ -1,6 +1,7 @@
 import os;
 import time;
 
+# Clears console.
 def clear():
 	os.system("clear");
 	os.system("cls");
@@ -28,6 +29,7 @@ ORIENTATION_OFFSET_Y = [0, -1, 0, 1];
 
 level = int(input('Enter a level: '));
 
+# Clears console and prints field with borders.
 def printField(field, playerX, playerY, playerO):
 	clear();
 	print((len(field[0]) + 2) * "#");
@@ -68,6 +70,7 @@ try:
 					playerX = x;
 					playerY = y;
 					row[x] = ' ';
+					break; # Can't break upper one. Darn python.
 		
 		printField(field, playerX, playerY, playerO);
 		print(HELP);
@@ -75,6 +78,8 @@ try:
 		victory = True;
 		commands = list(input("Enter commands: "));
 		printField(field, playerX, playerY, playerO);
+		
+		# Execute commands one by one.
 		for command in list(commands):
 			time.sleep(1);
 			if command == '1':
@@ -114,7 +119,7 @@ try:
 			for char in row:
 				if char == 'O':
 					victory = False;
-					break;
+					break; # Can't break upper one. Darn python.
 		
 		if victory:
 			input("You won! Press enter to continue...");
