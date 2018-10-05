@@ -1,13 +1,13 @@
 from subprocess import call;
-import os;
-import time;
+from time import sleep;
+from os import system;
 
 # Clears console.
 def clear():
 	try:
 		call("clear");
 	except:
-		os.system("cls");
+		system("cls");
 
 clear();
 print('''=====light bot=====
@@ -84,7 +84,7 @@ try:
 		
 		# Execute commands one by one.
 		for command in list(commands):
-			time.sleep(1);
+			sleep(1);
 			if command == '1':
 				playerX += ORIENTATION_OFFSET_X[playerO];
 				playerY += ORIENTATION_OFFSET_Y[playerO];
