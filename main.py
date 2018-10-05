@@ -1,10 +1,13 @@
+from subprocess import call;
 import os;
 import time;
 
 # Clears console.
 def clear():
-	os.system("clear");
-	os.system("cls");
+	try:
+		call("clear");
+	except:
+		os.system("cls");
 
 clear();
 print('''=====light bot=====
