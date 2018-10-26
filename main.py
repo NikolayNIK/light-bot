@@ -22,7 +22,7 @@ HELP = '''1 - move one cell fowrard.
 L - turn left (counter-clockwise).
 R - turn right (clockwise).
 C - light the cell.
-*= - set of commands named by * (one character).
+*= - set of commands named by * (any one character except 1, 2, L, l, R, r, C and c).
 ''';
 
 ORIENTATION_CHARS = ['<', '^', '>', 'v'];
@@ -109,18 +109,18 @@ try:
 					playerY += 2 * ORIENTATION_OFFSET_Y[playerO];
 					if (playerX < 0) or (playerY < 0) or (playerY >= len(field)) or (playerX >= len(field[playerY]) or field[playerY][playerX] == '#'):
 						return False;
-				elif command == 'C' or command == 'c' or command == 'с' or command == 'С':
+				elif command == 'C' or command == 'c':
 					sleep(1);
 					if field[playerY][playerX] == 'O':
 						field[playerY][playerX] = '0';
 					else:
 						return False;
-				elif command == 'L' or command == 'l' or command == 'д' or command == 'Д':
+				elif command == 'L' or command == 'l':
 					sleep(1);
 					playerO -= 1;
 					if playerO < 0:
 						playerO = 3;
-				elif command == 'R' or command == 'r' or command == 'к' or command == 'К':
+				elif command == 'R' or command == 'r':
 					sleep(1);
 					playerO += 1;
 					if playerO > 3:
